@@ -3,8 +3,8 @@
 var channel;
 onload = async function () {
   // webSocketリレーの初期化
-  var relay = RelayServer("achex", "chirimenSocket");
-  channel = await relay.subscribe("chirimenMbitSensors");
+  var relay = RelayServer("achex", "chirimenSocket");   //トークン名　
+  channel = await relay.subscribe("chirimenMbitSensors");   //チャンネル名　トークンの中でチャンネルが分けられる
   messageDiv.innerText = "achex web socketリレーサービスに接続しました";
   channel.onmessage = getMessage;
 };
